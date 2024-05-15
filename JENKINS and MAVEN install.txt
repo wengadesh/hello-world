@@ -1,0 +1,1278 @@
+[root@JENKINS-SERVER ~]# history
+    1  cd ~
+    2  clear
+    3  sudo yum update –y
+    4  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    5  rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+    6  sudo yum upgrade
+    7  sudo dnf install java-17-amazon-corretto -y
+    8  dnf install java-17-amazon-corretto -y
+    9  amazon-linux-extras install epel
+   10  clear
+   11  amazon-linux-extras install java-openjdk11 -y
+   12  sudo dnf install java-17-amazon-corretto -y
+   13  yum install java-17-amazon-corretto -y
+   14  yum install jenkins -y
+   15  sudo systemctl enable jenkins
+   16  sudo systemctl start jenkins
+   17  java --version
+   18  sudo systemctl status jenkins
+   19  host name
+   20  hostname
+   21  cd /etc
+   22  vim hostname
+   23  init 6
+   24  cd ~
+   25  cd /opt
+   26  wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+   27  ls
+   28  tar xzvf apache-maven-3.9.6-bin.tar.gz
+   29  ls
+   30  mv apache-maven-3.9.6 maven
+   31  ls
+   32  cd maven/
+   33  ls
+   34  cd bin/
+   35  ls
+   36  ./mvn -v
+   37  cd ..
+   38  ./mvn -v
+   39  cd ~
+   40  ll -a
+   41  vim .bash_profile
+   42  echo $PATH
+   43  source .bash_profile
+   44  echo $PATH
+   45  mvn -v
+   46  yum install git
+   47  history
+[root@JENKINS-SERVER ~]#
+
+
+=================================================================================================================
+
+Tomcat:
+========
+login as: ec2-user
+Authenticating with public key "imported-openssh-key"
+   ,     #_
+   ~\_  ####_        Amazon Linux 2
+  ~~  \_#####\
+  ~~     \###|       AL2 End of Life is 2025-06-30.
+  ~~       \#/ ___
+   ~~       V~' '->
+    ~~~         /    A newer version of Amazon Linux is available!
+      ~~._.   _/
+         _/ _/       Amazon Linux 2023, GA and supported until 2028-03-15.
+       _/m/'           https://aws.amazon.com/linux/amazon-linux-2023/
+
+7 package(s) needed for security, out of 12 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-2-110 ~]$ sudo su
+[root@ip-172-31-2-110 ec2-user]# cd ~
+[root@ip-172-31-2-110 ~]# pwd
+/root
+[root@ip-172-31-2-110 ~]# amazon-linux-extras install java-openjdk11
+Topic java-openjdk11 has end-of-support date of 2024-09-30
+Installing java-11-openjdk
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Cleaning repos: amzn2-core amzn2extra-docker amzn2extra-java-openjdk11 amzn2extra-kernel-5.10
+17 metadata files removed
+6 sqlite files removed
+0 metadata files removed
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+amzn2-core                                                                                                                                       | 3.6 kB  00:00:00
+amzn2extra-docker                                                                                                                                | 2.9 kB  00:00:00
+amzn2extra-java-openjdk11                                                                                                                        | 3.0 kB  00:00:00
+amzn2extra-kernel-5.10                                                                                                                           | 3.0 kB  00:00:00
+(1/9): amzn2-core/2/x86_64/group_gz                                                                                                              | 2.7 kB  00:00:00
+(2/9): amzn2-core/2/x86_64/updateinfo                                                                                                            | 830 kB  00:00:00
+(3/9): amzn2extra-java-openjdk11/2/x86_64/primary_db                                                                                             | 180 kB  00:00:00
+(4/9): amzn2extra-kernel-5.10/2/x86_64/updateinfo                                                                                                |  53 kB  00:00:00
+(5/9): amzn2extra-java-openjdk11/2/x86_64/updateinfo                                                                                             | 6.3 kB  00:00:00
+(6/9): amzn2extra-docker/2/x86_64/updateinfo                                                                                                     |  15 kB  00:00:00
+(7/9): amzn2extra-docker/2/x86_64/primary_db                                                                                                     | 106 kB  00:00:00
+(8/9): amzn2extra-kernel-5.10/2/x86_64/primary_db                                                                                                |  24 MB  00:00:00
+(9/9): amzn2-core/2/x86_64/primary_db                                                                                                            |  72 MB  00:00:01
+Resolving Dependencies
+--> Running transaction check
+---> Package java-11-openjdk.x86_64 1:11.0.22.0.7-1.amzn2.0.1 will be installed
+--> Processing Dependency: java-11-openjdk-headless(x86-64) = 1:11.0.22.0.7-1.amzn2.0.1 for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: fontconfig(x86-64) for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: xorg-x11-fonts-Type1 for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libX11.so.6()(64bit) for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libXext.so.6()(64bit) for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libXi.so.6()(64bit) for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libXrender.so.1()(64bit) for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libXtst.so.6()(64bit) for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libgif.so.4()(64bit) for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libjava.so()(64bit) for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libjvm.so()(64bit) for package: 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Running transaction check
+---> Package fontconfig.x86_64 0:2.13.0-4.3.amzn2 will be installed
+--> Processing Dependency: dejavu-sans-fonts for package: fontconfig-2.13.0-4.3.amzn2.x86_64
+--> Processing Dependency: fontpackages-filesystem for package: fontconfig-2.13.0-4.3.amzn2.x86_64
+---> Package giflib.x86_64 0:4.1.6-9.amzn2.0.2 will be installed
+--> Processing Dependency: libICE.so.6()(64bit) for package: giflib-4.1.6-9.amzn2.0.2.x86_64
+--> Processing Dependency: libSM.so.6()(64bit) for package: giflib-4.1.6-9.amzn2.0.2.x86_64
+---> Package java-11-openjdk-headless.x86_64 1:11.0.22.0.7-1.amzn2.0.1 will be installed
+--> Processing Dependency: copy-jdk-configs >= 3.3 for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: tzdata-java >= 2023c for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: cups-libs(x86-64) for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: javapackages-tools for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libasound.so.2(ALSA_0.9)(64bit) for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libasound.so.2(ALSA_0.9.0rc4)(64bit) for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: lksctp-tools(x86-64) for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: log4j-cve-2021-44228-cve-mitigations for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: pcsc-lite-libs(x86-64) for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libasound.so.2()(64bit) for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+--> Processing Dependency: libharfbuzz.so.0()(64bit) for package: 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64
+---> Package libX11.x86_64 0:1.6.7-3.amzn2.0.5 will be installed
+--> Processing Dependency: libX11-common >= 1.6.7-3.amzn2.0.5 for package: libX11-1.6.7-3.amzn2.0.5.x86_64
+--> Processing Dependency: libxcb.so.1()(64bit) for package: libX11-1.6.7-3.amzn2.0.5.x86_64
+---> Package libXext.x86_64 0:1.3.3-3.amzn2.0.2 will be installed
+---> Package libXi.x86_64 0:1.7.9-1.amzn2.0.2 will be installed
+---> Package libXrender.x86_64 0:0.9.10-1.amzn2.0.2 will be installed
+---> Package libXtst.x86_64 0:1.2.3-1.amzn2.0.2 will be installed
+---> Package xorg-x11-fonts-Type1.noarch 0:7.5-9.amzn2 will be installed
+--> Processing Dependency: mkfontdir for package: xorg-x11-fonts-Type1-7.5-9.amzn2.noarch
+--> Processing Dependency: mkfontdir for package: xorg-x11-fonts-Type1-7.5-9.amzn2.noarch
+--> Processing Dependency: ttmkfdir for package: xorg-x11-fonts-Type1-7.5-9.amzn2.noarch
+--> Processing Dependency: ttmkfdir for package: xorg-x11-fonts-Type1-7.5-9.amzn2.noarch
+--> Running transaction check
+---> Package alsa-lib.x86_64 0:1.1.4.1-2.amzn2 will be installed
+---> Package copy-jdk-configs.noarch 0:3.3-10.amzn2 will be installed
+---> Package cups-libs.x86_64 1:1.6.3-51.amzn2.0.4 will be installed
+--> Processing Dependency: libavahi-client.so.3()(64bit) for package: 1:cups-libs-1.6.3-51.amzn2.0.4.x86_64
+--> Processing Dependency: libavahi-common.so.3()(64bit) for package: 1:cups-libs-1.6.3-51.amzn2.0.4.x86_64
+---> Package dejavu-sans-fonts.noarch 0:2.33-6.amzn2 will be installed
+--> Processing Dependency: dejavu-fonts-common = 2.33-6.amzn2 for package: dejavu-sans-fonts-2.33-6.amzn2.noarch
+---> Package fontpackages-filesystem.noarch 0:1.44-8.amzn2 will be installed
+---> Package harfbuzz.x86_64 0:1.7.5-2.amzn2 will be installed
+--> Processing Dependency: libgraphite2.so.3()(64bit) for package: harfbuzz-1.7.5-2.amzn2.x86_64
+---> Package javapackages-tools.noarch 0:3.4.1-11.amzn2 will be installed
+--> Processing Dependency: python-javapackages = 3.4.1-11.amzn2 for package: javapackages-tools-3.4.1-11.amzn2.noarch
+--> Processing Dependency: libxslt for package: javapackages-tools-3.4.1-11.amzn2.noarch
+---> Package libICE.x86_64 0:1.0.9-9.amzn2.0.2 will be installed
+---> Package libSM.x86_64 0:1.2.2-2.amzn2.0.2 will be installed
+---> Package libX11-common.noarch 0:1.6.7-3.amzn2.0.5 will be installed
+---> Package libxcb.x86_64 0:1.12-1.amzn2.0.2 will be installed
+--> Processing Dependency: libXau.so.6()(64bit) for package: libxcb-1.12-1.amzn2.0.2.x86_64
+---> Package lksctp-tools.x86_64 0:1.0.17-2.amzn2.0.2 will be installed
+---> Package log4j-cve-2021-44228-hotpatch.noarch 0:1.3-7.amzn2 will be installed
+---> Package pcsc-lite-libs.x86_64 0:1.8.8-7.amzn2 will be installed
+---> Package ttmkfdir.x86_64 0:3.0.9-42.amzn2.0.2 will be installed
+---> Package tzdata-java.noarch 0:2024a-1.amzn2.0.1 will be installed
+---> Package xorg-x11-font-utils.x86_64 1:7.5-21.amzn2 will be installed
+--> Processing Dependency: libfontenc.so.1()(64bit) for package: 1:xorg-x11-font-utils-7.5-21.amzn2.x86_64
+--> Running transaction check
+---> Package avahi-libs.x86_64 0:0.6.31-20.amzn2.0.5 will be installed
+---> Package dejavu-fonts-common.noarch 0:2.33-6.amzn2 will be installed
+---> Package graphite2.x86_64 0:1.3.10-1.amzn2.0.2 will be installed
+---> Package libXau.x86_64 0:1.0.8-2.1.amzn2.0.2 will be installed
+---> Package libfontenc.x86_64 0:1.1.3-3.amzn2.0.2 will be installed
+---> Package libxslt.x86_64 0:1.1.28-6.amzn2 will be installed
+---> Package python-javapackages.noarch 0:3.4.1-11.amzn2 will be installed
+--> Processing Dependency: python-lxml for package: python-javapackages-3.4.1-11.amzn2.noarch
+--> Running transaction check
+---> Package python-lxml.x86_64 0:3.2.1-4.amzn2.0.5 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+========================================================================================================================================================================
+ Package                                         Arch                     Version                                     Repository                                   Size
+========================================================================================================================================================================
+Installing:
+ java-11-openjdk                                 x86_64                   1:11.0.22.0.7-1.amzn2.0.1                   amzn2extra-java-openjdk11                   241 k
+Installing for dependencies:
+ alsa-lib                                        x86_64                   1.1.4.1-2.amzn2                             amzn2-core                                  425 k
+ avahi-libs                                      x86_64                   0.6.31-20.amzn2.0.5                         amzn2-core                                   62 k
+ copy-jdk-configs                                noarch                   3.3-10.amzn2                                amzn2-core                                   21 k
+ cups-libs                                       x86_64                   1:1.6.3-51.amzn2.0.4                        amzn2-core                                  357 k
+ dejavu-fonts-common                             noarch                   2.33-6.amzn2                                amzn2-core                                   64 k
+ dejavu-sans-fonts                               noarch                   2.33-6.amzn2                                amzn2-core                                  1.4 M
+ fontconfig                                      x86_64                   2.13.0-4.3.amzn2                            amzn2-core                                  253 k
+ fontpackages-filesystem                         noarch                   1.44-8.amzn2                                amzn2-core                                   10 k
+ giflib                                          x86_64                   4.1.6-9.amzn2.0.2                           amzn2-core                                   40 k
+ graphite2                                       x86_64                   1.3.10-1.amzn2.0.2                          amzn2-core                                  115 k
+ harfbuzz                                        x86_64                   1.7.5-2.amzn2                               amzn2-core                                  279 k
+ java-11-openjdk-headless                        x86_64                   1:11.0.22.0.7-1.amzn2.0.1                   amzn2extra-java-openjdk11                    39 M
+ javapackages-tools                              noarch                   3.4.1-11.amzn2                              amzn2-core                                   73 k
+ libICE                                          x86_64                   1.0.9-9.amzn2.0.2                           amzn2-core                                   67 k
+ libSM                                           x86_64                   1.2.2-2.amzn2.0.2                           amzn2-core                                   39 k
+ libX11                                          x86_64                   1.6.7-3.amzn2.0.5                           amzn2-core                                  607 k
+ libX11-common                                   noarch                   1.6.7-3.amzn2.0.5                           amzn2-core                                  165 k
+ libXau                                          x86_64                   1.0.8-2.1.amzn2.0.2                         amzn2-core                                   29 k
+ libXext                                         x86_64                   1.3.3-3.amzn2.0.2                           amzn2-core                                   39 k
+ libXi                                           x86_64                   1.7.9-1.amzn2.0.2                           amzn2-core                                   41 k
+ libXrender                                      x86_64                   0.9.10-1.amzn2.0.2                          amzn2-core                                   26 k
+ libXtst                                         x86_64                   1.2.3-1.amzn2.0.2                           amzn2-core                                   20 k
+ libfontenc                                      x86_64                   1.1.3-3.amzn2.0.2                           amzn2-core                                   31 k
+ libxcb                                          x86_64                   1.12-1.amzn2.0.2                            amzn2-core                                  216 k
+ libxslt                                         x86_64                   1.1.28-6.amzn2                              amzn2-core                                  240 k
+ lksctp-tools                                    x86_64                   1.0.17-2.amzn2.0.2                          amzn2-core                                   88 k
+ log4j-cve-2021-44228-hotpatch                   noarch                   1.3-7.amzn2                                 amzn2-core                                  139 k
+ pcsc-lite-libs                                  x86_64                   1.8.8-7.amzn2                               amzn2-core                                   35 k
+ python-javapackages                             noarch                   3.4.1-11.amzn2                              amzn2-core                                   31 k
+ python-lxml                                     x86_64                   3.2.1-4.amzn2.0.5                           amzn2-core                                  1.0 M
+ ttmkfdir                                        x86_64                   3.0.9-42.amzn2.0.2                          amzn2-core                                   50 k
+ tzdata-java                                     noarch                   2024a-1.amzn2.0.1                           amzn2-core                                  185 k
+ xorg-x11-font-utils                             x86_64                   1:7.5-21.amzn2                              amzn2-core                                  103 k
+ xorg-x11-fonts-Type1                            noarch                   7.5-9.amzn2                                 amzn2-core                                  521 k
+
+Transaction Summary
+========================================================================================================================================================================
+Install  1 Package (+34 Dependent packages)
+
+Total download size: 46 M
+Installed size: 184 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/35): alsa-lib-1.1.4.1-2.amzn2.x86_64.rpm                                                                                                      | 425 kB  00:00:00
+(2/35): avahi-libs-0.6.31-20.amzn2.0.5.x86_64.rpm                                                                                                |  62 kB  00:00:00
+(3/35): copy-jdk-configs-3.3-10.amzn2.noarch.rpm                                                                                                 |  21 kB  00:00:00
+(4/35): cups-libs-1.6.3-51.amzn2.0.4.x86_64.rpm                                                                                                  | 357 kB  00:00:00
+(5/35): dejavu-fonts-common-2.33-6.amzn2.noarch.rpm                                                                                              |  64 kB  00:00:00
+(6/35): fontconfig-2.13.0-4.3.amzn2.x86_64.rpm                                                                                                   | 253 kB  00:00:00
+(7/35): dejavu-sans-fonts-2.33-6.amzn2.noarch.rpm                                                                                                | 1.4 MB  00:00:00
+(8/35): fontpackages-filesystem-1.44-8.amzn2.noarch.rpm                                                                                          |  10 kB  00:00:00
+(9/35): giflib-4.1.6-9.amzn2.0.2.x86_64.rpm                                                                                                      |  40 kB  00:00:00
+(10/35): graphite2-1.3.10-1.amzn2.0.2.x86_64.rpm                                                                                                 | 115 kB  00:00:00
+(11/35): harfbuzz-1.7.5-2.amzn2.x86_64.rpm                                                                                                       | 279 kB  00:00:00
+(12/35): javapackages-tools-3.4.1-11.amzn2.noarch.rpm                                                                                            |  73 kB  00:00:00
+(13/35): libSM-1.2.2-2.amzn2.0.2.x86_64.rpm                                                                                                      |  39 kB  00:00:00
+(14/35): libX11-1.6.7-3.amzn2.0.5.x86_64.rpm                                                                                                     | 607 kB  00:00:00
+(15/35): libX11-common-1.6.7-3.amzn2.0.5.noarch.rpm                                                                                              | 165 kB  00:00:00
+(16/35): libXau-1.0.8-2.1.amzn2.0.2.x86_64.rpm                                                                                                   |  29 kB  00:00:00
+(17/35): libXext-1.3.3-3.amzn2.0.2.x86_64.rpm                                                                                                    |  39 kB  00:00:00
+(18/35): libXi-1.7.9-1.amzn2.0.2.x86_64.rpm                                                                                                      |  41 kB  00:00:00
+(19/35): libXrender-0.9.10-1.amzn2.0.2.x86_64.rpm                                                                                                |  26 kB  00:00:00
+(20/35): libXtst-1.2.3-1.amzn2.0.2.x86_64.rpm                                                                                                    |  20 kB  00:00:00
+(21/35): libfontenc-1.1.3-3.amzn2.0.2.x86_64.rpm                                                                                                 |  31 kB  00:00:00
+(22/35): libxcb-1.12-1.amzn2.0.2.x86_64.rpm                                                                                                      | 216 kB  00:00:00
+(23/35): libxslt-1.1.28-6.amzn2.x86_64.rpm                                                                                                       | 240 kB  00:00:00
+(24/35): libICE-1.0.9-9.amzn2.0.2.x86_64.rpm                                                                                                     |  67 kB  00:00:00
+(25/35): lksctp-tools-1.0.17-2.amzn2.0.2.x86_64.rpm                                                                                              |  88 kB  00:00:00
+(26/35): log4j-cve-2021-44228-hotpatch-1.3-7.amzn2.noarch.rpm                                                                                    | 139 kB  00:00:00
+(27/35): pcsc-lite-libs-1.8.8-7.amzn2.x86_64.rpm                                                                                                 |  35 kB  00:00:00
+(28/35): java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64.rpm                                                                                      | 241 kB  00:00:00
+(29/35): python-javapackages-3.4.1-11.amzn2.noarch.rpm                                                                                           |  31 kB  00:00:00
+(30/35): python-lxml-3.2.1-4.amzn2.0.5.x86_64.rpm                                                                                                | 1.0 MB  00:00:00
+(31/35): ttmkfdir-3.0.9-42.amzn2.0.2.x86_64.rpm                                                                                                  |  50 kB  00:00:00
+(32/35): tzdata-java-2024a-1.amzn2.0.1.noarch.rpm                                                                                                | 185 kB  00:00:00
+(33/35): xorg-x11-font-utils-7.5-21.amzn2.x86_64.rpm                                                                                             | 103 kB  00:00:00
+(34/35): xorg-x11-fonts-Type1-7.5-9.amzn2.noarch.rpm                                                                                             | 521 kB  00:00:00
+(35/35): java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64.rpm                                                                             |  39 MB  00:00:00
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                                                                                                    42 MB/s |  46 MB  00:00:01
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : libICE-1.0.9-9.amzn2.0.2.x86_64                                                                                                                     1/35
+  Installing : libxslt-1.1.28-6.amzn2.x86_64                                                                                                                       2/35
+  Installing : fontpackages-filesystem-1.44-8.amzn2.noarch                                                                                                         3/35
+  Installing : dejavu-fonts-common-2.33-6.amzn2.noarch                                                                                                             4/35
+  Installing : dejavu-sans-fonts-2.33-6.amzn2.noarch                                                                                                               5/35
+  Installing : fontconfig-2.13.0-4.3.amzn2.x86_64                                                                                                                  6/35
+  Installing : python-lxml-3.2.1-4.amzn2.0.5.x86_64                                                                                                                7/35
+  Installing : python-javapackages-3.4.1-11.amzn2.noarch                                                                                                           8/35
+  Installing : javapackages-tools-3.4.1-11.amzn2.noarch                                                                                                            9/35
+  Installing : libSM-1.2.2-2.amzn2.0.2.x86_64                                                                                                                     10/35
+  Installing : graphite2-1.3.10-1.amzn2.0.2.x86_64                                                                                                                11/35
+  Installing : harfbuzz-1.7.5-2.amzn2.x86_64                                                                                                                      12/35
+  Installing : alsa-lib-1.1.4.1-2.amzn2.x86_64                                                                                                                    13/35
+  Installing : copy-jdk-configs-3.3-10.amzn2.noarch                                                                                                               14/35
+  Installing : pcsc-lite-libs-1.8.8-7.amzn2.x86_64                                                                                                                15/35
+  Installing : avahi-libs-0.6.31-20.amzn2.0.5.x86_64                                                                                                              16/35
+  Installing : 1:cups-libs-1.6.3-51.amzn2.0.4.x86_64                                                                                                              17/35
+  Installing : libX11-common-1.6.7-3.amzn2.0.5.noarch                                                                                                             18/35
+  Installing : libfontenc-1.1.3-3.amzn2.0.2.x86_64                                                                                                                19/35
+  Installing : 1:xorg-x11-font-utils-7.5-21.amzn2.x86_64                                                                                                          20/35
+  Installing : libXau-1.0.8-2.1.amzn2.0.2.x86_64                                                                                                                  21/35
+  Installing : libxcb-1.12-1.amzn2.0.2.x86_64                                                                                                                     22/35
+  Installing : libX11-1.6.7-3.amzn2.0.5.x86_64                                                                                                                    23/35
+  Installing : libXext-1.3.3-3.amzn2.0.2.x86_64                                                                                                                   24/35
+  Installing : libXi-1.7.9-1.amzn2.0.2.x86_64                                                                                                                     25/35
+  Installing : libXtst-1.2.3-1.amzn2.0.2.x86_64                                                                                                                   26/35
+  Installing : libXrender-0.9.10-1.amzn2.0.2.x86_64                                                                                                               27/35
+  Installing : giflib-4.1.6-9.amzn2.0.2.x86_64                                                                                                                    28/35
+  Installing : ttmkfdir-3.0.9-42.amzn2.0.2.x86_64                                                                                                                 29/35
+  Installing : xorg-x11-fonts-Type1-7.5-9.amzn2.noarch                                                                                                            30/35
+  Installing : lksctp-tools-1.0.17-2.amzn2.0.2.x86_64                                                                                                             31/35
+  Installing : log4j-cve-2021-44228-hotpatch-1.3-7.amzn2.noarch                                                                                                   32/35
+Created symlink from /etc/systemd/system/multi-user.target.wants/log4j-cve-2021-44228-hotpatch.service to /usr/lib/systemd/system/log4j-cve-2021-44228-hotpatch.service.
+  Installing : tzdata-java-2024a-1.amzn2.0.1.noarch                                                                                                               33/35
+  Installing : 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64                                                                                          34/35
+  Installing : 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64                                                                                                   35/35
+  Verifying  : libSM-1.2.2-2.amzn2.0.2.x86_64                                                                                                                      1/35
+  Verifying  : tzdata-java-2024a-1.amzn2.0.1.noarch                                                                                                                2/35
+  Verifying  : fontpackages-filesystem-1.44-8.amzn2.noarch                                                                                                         3/35
+  Verifying  : libxcb-1.12-1.amzn2.0.2.x86_64                                                                                                                      4/35
+  Verifying  : libXext-1.3.3-3.amzn2.0.2.x86_64                                                                                                                    5/35
+  Verifying  : libX11-1.6.7-3.amzn2.0.5.x86_64                                                                                                                     6/35
+  Verifying  : log4j-cve-2021-44228-hotpatch-1.3-7.amzn2.noarch                                                                                                    7/35
+  Verifying  : lksctp-tools-1.0.17-2.amzn2.0.2.x86_64                                                                                                              8/35
+  Verifying  : 1:cups-libs-1.6.3-51.amzn2.0.4.x86_64                                                                                                               9/35
+  Verifying  : ttmkfdir-3.0.9-42.amzn2.0.2.x86_64                                                                                                                 10/35
+  Verifying  : 1:java-11-openjdk-11.0.22.0.7-1.amzn2.0.1.x86_64                                                                                                   11/35
+  Verifying  : dejavu-fonts-common-2.33-6.amzn2.noarch                                                                                                            12/35
+  Verifying  : libXau-1.0.8-2.1.amzn2.0.2.x86_64                                                                                                                  13/35
+  Verifying  : libfontenc-1.1.3-3.amzn2.0.2.x86_64                                                                                                                14/35
+  Verifying  : xorg-x11-fonts-Type1-7.5-9.amzn2.noarch                                                                                                            15/35
+  Verifying  : 1:xorg-x11-font-utils-7.5-21.amzn2.x86_64                                                                                                          16/35
+  Verifying  : python-lxml-3.2.1-4.amzn2.0.5.x86_64                                                                                                               17/35
+  Verifying  : libXrender-0.9.10-1.amzn2.0.2.x86_64                                                                                                               18/35
+  Verifying  : libX11-common-1.6.7-3.amzn2.0.5.noarch                                                                                                             19/35
+  Verifying  : dejavu-sans-fonts-2.33-6.amzn2.noarch                                                                                                              20/35
+  Verifying  : avahi-libs-0.6.31-20.amzn2.0.5.x86_64                                                                                                              21/35
+  Verifying  : fontconfig-2.13.0-4.3.amzn2.x86_64                                                                                                                 22/35
+  Verifying  : pcsc-lite-libs-1.8.8-7.amzn2.x86_64                                                                                                                23/35
+  Verifying  : harfbuzz-1.7.5-2.amzn2.x86_64                                                                                                                      24/35
+  Verifying  : giflib-4.1.6-9.amzn2.0.2.x86_64                                                                                                                    25/35
+  Verifying  : libXi-1.7.9-1.amzn2.0.2.x86_64                                                                                                                     26/35
+  Verifying  : 1:java-11-openjdk-headless-11.0.22.0.7-1.amzn2.0.1.x86_64                                                                                          27/35
+  Verifying  : libxslt-1.1.28-6.amzn2.x86_64                                                                                                                      28/35
+  Verifying  : python-javapackages-3.4.1-11.amzn2.noarch                                                                                                          29/35
+  Verifying  : libXtst-1.2.3-1.amzn2.0.2.x86_64                                                                                                                   30/35
+  Verifying  : copy-jdk-configs-3.3-10.amzn2.noarch                                                                                                               31/35
+  Verifying  : alsa-lib-1.1.4.1-2.amzn2.x86_64                                                                                                                    32/35
+  Verifying  : libICE-1.0.9-9.amzn2.0.2.x86_64                                                                                                                    33/35
+  Verifying  : graphite2-1.3.10-1.amzn2.0.2.x86_64                                                                                                                34/35
+  Verifying  : javapackages-tools-3.4.1-11.amzn2.noarch                                                                                                           35/35
+
+Installed:
+  java-11-openjdk.x86_64 1:11.0.22.0.7-1.amzn2.0.1
+
+Dependency Installed:
+  alsa-lib.x86_64 0:1.1.4.1-2.amzn2                avahi-libs.x86_64 0:0.6.31-20.amzn2.0.5             copy-jdk-configs.noarch 0:3.3-10.amzn2
+  cups-libs.x86_64 1:1.6.3-51.amzn2.0.4            dejavu-fonts-common.noarch 0:2.33-6.amzn2           dejavu-sans-fonts.noarch 0:2.33-6.amzn2
+  fontconfig.x86_64 0:2.13.0-4.3.amzn2             fontpackages-filesystem.noarch 0:1.44-8.amzn2       giflib.x86_64 0:4.1.6-9.amzn2.0.2
+  graphite2.x86_64 0:1.3.10-1.amzn2.0.2            harfbuzz.x86_64 0:1.7.5-2.amzn2                     java-11-openjdk-headless.x86_64 1:11.0.22.0.7-1.amzn2.0.1
+  javapackages-tools.noarch 0:3.4.1-11.amzn2       libICE.x86_64 0:1.0.9-9.amzn2.0.2                   libSM.x86_64 0:1.2.2-2.amzn2.0.2
+  libX11.x86_64 0:1.6.7-3.amzn2.0.5                libX11-common.noarch 0:1.6.7-3.amzn2.0.5            libXau.x86_64 0:1.0.8-2.1.amzn2.0.2
+  libXext.x86_64 0:1.3.3-3.amzn2.0.2               libXi.x86_64 0:1.7.9-1.amzn2.0.2                    libXrender.x86_64 0:0.9.10-1.amzn2.0.2
+  libXtst.x86_64 0:1.2.3-1.amzn2.0.2               libfontenc.x86_64 0:1.1.3-3.amzn2.0.2               libxcb.x86_64 0:1.12-1.amzn2.0.2
+  libxslt.x86_64 0:1.1.28-6.amzn2                  lksctp-tools.x86_64 0:1.0.17-2.amzn2.0.2            log4j-cve-2021-44228-hotpatch.noarch 0:1.3-7.amzn2
+  pcsc-lite-libs.x86_64 0:1.8.8-7.amzn2            python-javapackages.noarch 0:3.4.1-11.amzn2         python-lxml.x86_64 0:3.2.1-4.amzn2.0.5
+  ttmkfdir.x86_64 0:3.0.9-42.amzn2.0.2             tzdata-java.noarch 0:2024a-1.amzn2.0.1              xorg-x11-font-utils.x86_64 1:7.5-21.amzn2
+  xorg-x11-fonts-Type1.noarch 0:7.5-9.amzn2
+
+Complete!
+  2  httpd_modules            available    [ =1.0  =stable ]
+  3  memcached1.5             available    \
+        [ =1.5.1  =1.5.16  =1.5.17 ]
+  9  R3.4                     available    [ =3.4.3  =stable ]
+ 10  rust1                    available    \
+        [ =1.22.1  =1.26.0  =1.26.1  =1.27.2  =1.31.0  =1.38.0
+          =stable ]
+ 18  libreoffice              available    \
+        [ =5.0.6.2_15  =5.3.6.1  =stable ]
+ 19  gimp                     available    [ =2.8.22 ]
+ 20 †docker=latest            enabled      \
+        [ =17.12.1  =18.03.1  =18.06.1  =18.09.9  =stable ]
+ 21  mate-desktop1.x          available    \
+        [ =1.19.0  =1.20.0  =stable ]
+ 22  GraphicsMagick1.3        available    \
+        [ =1.3.29  =1.3.32  =1.3.34  =stable ]
+ 23 †tomcat8.5                available    \
+        [ =8.5.31  =8.5.32  =8.5.38  =8.5.40  =8.5.42  =8.5.50
+          =stable ]
+ 24  epel                     available    [ =7.11  =stable ]
+ 25  testing                  available    [ =1.0  =stable ]
+ 26  ecs                      available    [ =stable ]
+ 27 †corretto8                available    \
+        [ =1.8.0_192  =1.8.0_202  =1.8.0_212  =1.8.0_222  =1.8.0_232
+          =1.8.0_242  =stable ]
+ 32  lustre2.10               available    \
+        [ =2.10.5  =2.10.8  =stable ]
+ 33 †java-openjdk11=latest    enabled      [ =11  =stable ]
+ 34  lynis                    available    [ =stable ]
+ 36  BCC                      available    [ =0.x  =stable ]
+ 37  mono                     available    [ =5.x  =stable ]
+ 38  nginx1                   available    [ =stable ]
+ 40  mock                     available    [ =stable ]
+ 43  livepatch                available    [ =stable ]
+ 44 †python3.8                available    [ =stable ]
+ 45  haproxy2                 available    [ =stable ]
+ 46  collectd                 available    [ =stable ]
+ 47  aws-nitro-enclaves-cli   available    [ =stable ]
+ 48  R4                       available    [ =stable ]
+  _  kernel-5.4               available    [ =stable ]
+ 50  selinux-ng               available    [ =stable ]
+ 52  tomcat9                  available    [ =stable ]
+ 53  unbound1.13              available    [ =stable ]
+ 54 †mariadb10.5              available    [ =stable ]
+ 55  kernel-5.10=latest       enabled      [ =stable ]
+ 56  redis6                   available    [ =stable ]
+ 57 †ruby3.0                  available    [ =stable ]
+ 58 †postgresql12             available    [ =stable ]
+ 59 †postgresql13             available    [ =stable ]
+ 60  mock2                    available    [ =stable ]
+ 61  dnsmasq2.85              available    [ =stable ]
+ 62  kernel-5.15              available    [ =stable ]
+ 63 †postgresql14             available    [ =stable ]
+ 64  firefox                  available    [ =stable ]
+ 65  lustre                   available    [ =stable ]
+ 66 †php8.1                   available    [ =stable ]
+ 67  awscli1                  available    [ =stable ]
+ 68 †php8.2                   available    [ =stable ]
+ 69  dnsmasq                  available    [ =stable ]
+ 70  unbound1.17              available    [ =stable ]
+ 72  collectd-python3         available    [ =stable ]
+† Note on end-of-support. Use 'info' subcommand.
+[root@ip-172-31-2-110 ~]# java --version
+openjdk 11.0.22 2024-01-16 LTS
+OpenJDK Runtime Environment (Red_Hat-11.0.22.0.7-1.amzn2.0.1) (build 11.0.22+7-LTS)
+OpenJDK 64-Bit Server VM (Red_Hat-11.0.22.0.7-1.amzn2.0.1) (build 11.0.22+7-LTS, mixed mode, sharing)
+[root@ip-172-31-2-110 ~]# cd /opt
+[root@ip-172-31-2-110 opt]# wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.87/bin/apache-tomcat-9.0.87.tar.gz
+--2024-03-20 16:49:48--  https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.87/bin/apache-tomcat-9.0.87.tar.gz
+Resolving dlcdn.apache.org (dlcdn.apache.org)... 151.101.2.132, 2a04:4e42::644
+Connecting to dlcdn.apache.org (dlcdn.apache.org)|151.101.2.132|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 11743322 (11M) [application/x-gzip]
+Saving to: ‘apache-tomcat-9.0.87.tar.gz’
+
+100%[==============================================================================================================================>] 11,743,322  --.-K/s   in 0.09s
+
+2024-03-20 16:49:48 (129 MB/s) - ‘apache-tomcat-9.0.87.tar.gz’ saved [11743322/11743322]
+
+[root@ip-172-31-2-110 opt]# ls
+apache-tomcat-9.0.87.tar.gz  aws  rh
+[root@ip-172-31-2-110 opt]# tar -xvzf apache-tomcat-9.0.87.tar.gz
+apache-tomcat-9.0.87/conf/
+apache-tomcat-9.0.87/conf/catalina.policy
+apache-tomcat-9.0.87/conf/catalina.properties
+apache-tomcat-9.0.87/conf/context.xml
+apache-tomcat-9.0.87/conf/jaspic-providers.xml
+apache-tomcat-9.0.87/conf/jaspic-providers.xsd
+apache-tomcat-9.0.87/conf/logging.properties
+apache-tomcat-9.0.87/conf/server.xml
+apache-tomcat-9.0.87/conf/tomcat-users.xml
+apache-tomcat-9.0.87/conf/tomcat-users.xsd
+apache-tomcat-9.0.87/conf/web.xml
+apache-tomcat-9.0.87/bin/
+apache-tomcat-9.0.87/lib/
+apache-tomcat-9.0.87/logs/
+apache-tomcat-9.0.87/temp/
+apache-tomcat-9.0.87/webapps/
+apache-tomcat-9.0.87/webapps/ROOT/
+apache-tomcat-9.0.87/webapps/ROOT/WEB-INF/
+apache-tomcat-9.0.87/webapps/docs/
+apache-tomcat-9.0.87/webapps/docs/META-INF/
+apache-tomcat-9.0.87/webapps/docs/WEB-INF/
+apache-tomcat-9.0.87/webapps/docs/WEB-INF/jsp/
+apache-tomcat-9.0.87/webapps/docs/annotationapi/
+apache-tomcat-9.0.87/webapps/docs/api/
+apache-tomcat-9.0.87/webapps/docs/appdev/
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/docs/
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/src/
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/src/mypackage/
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/web/
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/web/WEB-INF/
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/web/images/
+apache-tomcat-9.0.87/webapps/docs/architecture/
+apache-tomcat-9.0.87/webapps/docs/architecture/requestProcess/
+apache-tomcat-9.0.87/webapps/docs/architecture/startup/
+apache-tomcat-9.0.87/webapps/docs/config/
+apache-tomcat-9.0.87/webapps/docs/elapi/
+apache-tomcat-9.0.87/webapps/docs/images/
+apache-tomcat-9.0.87/webapps/docs/images/fonts/
+apache-tomcat-9.0.87/webapps/docs/jaspicapi/
+apache-tomcat-9.0.87/webapps/docs/jspapi/
+apache-tomcat-9.0.87/webapps/docs/servletapi/
+apache-tomcat-9.0.87/webapps/docs/tribes/
+apache-tomcat-9.0.87/webapps/docs/websocketapi/
+apache-tomcat-9.0.87/webapps/examples/
+apache-tomcat-9.0.87/webapps/examples/META-INF/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/cal/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/checkbox/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/colors/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/compressionFilters/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/dates/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/error/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/filters/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/http2/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/el/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/listeners/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/nonblocking/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/num/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/sessions/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/trailers/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/util/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/validators/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/chat/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/jsp/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/lib/
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/tags/
+apache-tomcat-9.0.87/webapps/examples/jsp/
+apache-tomcat-9.0.87/webapps/examples/jsp/async/
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/
+apache-tomcat-9.0.87/webapps/examples/jsp/checkbox/
+apache-tomcat-9.0.87/webapps/examples/jsp/colors/
+apache-tomcat-9.0.87/webapps/examples/jsp/dates/
+apache-tomcat-9.0.87/webapps/examples/jsp/error/
+apache-tomcat-9.0.87/webapps/examples/jsp/forward/
+apache-tomcat-9.0.87/webapps/examples/jsp/images/
+apache-tomcat-9.0.87/webapps/examples/jsp/include/
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspx/
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/
+apache-tomcat-9.0.87/webapps/examples/jsp/jsptoserv/
+apache-tomcat-9.0.87/webapps/examples/jsp/num/
+apache-tomcat-9.0.87/webapps/examples/jsp/security/
+apache-tomcat-9.0.87/webapps/examples/jsp/security/protected/
+apache-tomcat-9.0.87/webapps/examples/jsp/sessions/
+apache-tomcat-9.0.87/webapps/examples/jsp/simpletag/
+apache-tomcat-9.0.87/webapps/examples/jsp/snp/
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/
+apache-tomcat-9.0.87/webapps/examples/jsp/xml/
+apache-tomcat-9.0.87/webapps/examples/servlets/
+apache-tomcat-9.0.87/webapps/examples/servlets/images/
+apache-tomcat-9.0.87/webapps/examples/servlets/nonblocking/
+apache-tomcat-9.0.87/webapps/examples/websocket/
+apache-tomcat-9.0.87/webapps/host-manager/
+apache-tomcat-9.0.87/webapps/host-manager/META-INF/
+apache-tomcat-9.0.87/webapps/host-manager/WEB-INF/
+apache-tomcat-9.0.87/webapps/host-manager/WEB-INF/jsp/
+apache-tomcat-9.0.87/webapps/host-manager/css/
+apache-tomcat-9.0.87/webapps/host-manager/images/
+apache-tomcat-9.0.87/webapps/manager/
+apache-tomcat-9.0.87/webapps/manager/META-INF/
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/jsp/
+apache-tomcat-9.0.87/webapps/manager/css/
+apache-tomcat-9.0.87/webapps/manager/images/
+apache-tomcat-9.0.87/work/
+apache-tomcat-9.0.87/BUILDING.txt
+apache-tomcat-9.0.87/CONTRIBUTING.md
+apache-tomcat-9.0.87/LICENSE
+apache-tomcat-9.0.87/NOTICE
+apache-tomcat-9.0.87/README.md
+apache-tomcat-9.0.87/RELEASE-NOTES
+apache-tomcat-9.0.87/RUNNING.txt
+apache-tomcat-9.0.87/bin/bootstrap.jar
+apache-tomcat-9.0.87/bin/catalina-tasks.xml
+apache-tomcat-9.0.87/bin/catalina.bat
+apache-tomcat-9.0.87/bin/ciphers.bat
+apache-tomcat-9.0.87/bin/commons-daemon-native.tar.gz
+apache-tomcat-9.0.87/bin/commons-daemon.jar
+apache-tomcat-9.0.87/bin/configtest.bat
+apache-tomcat-9.0.87/bin/digest.bat
+apache-tomcat-9.0.87/bin/makebase.bat
+apache-tomcat-9.0.87/bin/setclasspath.bat
+apache-tomcat-9.0.87/bin/shutdown.bat
+apache-tomcat-9.0.87/bin/startup.bat
+apache-tomcat-9.0.87/bin/tomcat-juli.jar
+apache-tomcat-9.0.87/bin/tomcat-native.tar.gz
+apache-tomcat-9.0.87/bin/tool-wrapper.bat
+apache-tomcat-9.0.87/bin/version.bat
+apache-tomcat-9.0.87/lib/annotations-api.jar
+apache-tomcat-9.0.87/lib/catalina-ant.jar
+apache-tomcat-9.0.87/lib/catalina-ha.jar
+apache-tomcat-9.0.87/lib/catalina-ssi.jar
+apache-tomcat-9.0.87/lib/catalina-storeconfig.jar
+apache-tomcat-9.0.87/lib/catalina-tribes.jar
+apache-tomcat-9.0.87/lib/catalina.jar
+apache-tomcat-9.0.87/lib/ecj-4.20.jar
+apache-tomcat-9.0.87/lib/el-api.jar
+apache-tomcat-9.0.87/lib/jasper-el.jar
+apache-tomcat-9.0.87/lib/jasper.jar
+apache-tomcat-9.0.87/lib/jaspic-api.jar
+apache-tomcat-9.0.87/lib/jsp-api.jar
+apache-tomcat-9.0.87/lib/servlet-api.jar
+apache-tomcat-9.0.87/lib/tomcat-api.jar
+apache-tomcat-9.0.87/lib/tomcat-coyote.jar
+apache-tomcat-9.0.87/lib/tomcat-dbcp.jar
+apache-tomcat-9.0.87/lib/tomcat-i18n-cs.jar
+apache-tomcat-9.0.87/lib/tomcat-i18n-de.jar
+apache-tomcat-9.0.87/lib/tomcat-i18n-es.jar
+apache-tomcat-9.0.87/lib/tomcat-i18n-fr.jar
+apache-tomcat-9.0.87/lib/tomcat-i18n-ja.jar
+apache-tomcat-9.0.87/lib/tomcat-i18n-ko.jar
+apache-tomcat-9.0.87/lib/tomcat-i18n-pt-BR.jar
+apache-tomcat-9.0.87/lib/tomcat-i18n-ru.jar
+apache-tomcat-9.0.87/lib/tomcat-i18n-zh-CN.jar
+apache-tomcat-9.0.87/lib/tomcat-jdbc.jar
+apache-tomcat-9.0.87/lib/tomcat-jni.jar
+apache-tomcat-9.0.87/lib/tomcat-util-scan.jar
+apache-tomcat-9.0.87/lib/tomcat-util.jar
+apache-tomcat-9.0.87/lib/tomcat-websocket.jar
+apache-tomcat-9.0.87/lib/websocket-api.jar
+apache-tomcat-9.0.87/temp/safeToDelete.tmp
+apache-tomcat-9.0.87/webapps/ROOT/RELEASE-NOTES.txt
+apache-tomcat-9.0.87/webapps/ROOT/WEB-INF/web.xml
+apache-tomcat-9.0.87/webapps/ROOT/asf-logo-wide.svg
+apache-tomcat-9.0.87/webapps/ROOT/bg-button.png
+apache-tomcat-9.0.87/webapps/ROOT/bg-middle.png
+apache-tomcat-9.0.87/webapps/ROOT/bg-nav.png
+apache-tomcat-9.0.87/webapps/ROOT/bg-upper.png
+apache-tomcat-9.0.87/webapps/ROOT/favicon.ico
+apache-tomcat-9.0.87/webapps/ROOT/index.jsp
+apache-tomcat-9.0.87/webapps/ROOT/tomcat.css
+apache-tomcat-9.0.87/webapps/ROOT/tomcat.svg
+apache-tomcat-9.0.87/webapps/docs/BUILDING.txt
+apache-tomcat-9.0.87/webapps/docs/META-INF/context.xml
+apache-tomcat-9.0.87/webapps/docs/RELEASE-NOTES.txt
+apache-tomcat-9.0.87/webapps/docs/RUNNING.txt
+apache-tomcat-9.0.87/webapps/docs/WEB-INF/jsp/403.jsp
+apache-tomcat-9.0.87/webapps/docs/WEB-INF/web.xml
+apache-tomcat-9.0.87/webapps/docs/aio.html
+apache-tomcat-9.0.87/webapps/docs/annotationapi/index.html
+apache-tomcat-9.0.87/webapps/docs/api/index.html
+apache-tomcat-9.0.87/webapps/docs/appdev/build.xml.txt
+apache-tomcat-9.0.87/webapps/docs/appdev/deployment.html
+apache-tomcat-9.0.87/webapps/docs/appdev/index.html
+apache-tomcat-9.0.87/webapps/docs/appdev/installation.html
+apache-tomcat-9.0.87/webapps/docs/appdev/introduction.html
+apache-tomcat-9.0.87/webapps/docs/appdev/processes.html
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/build.xml
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/docs/README.txt
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/index.html
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/sample.war
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/src/mypackage/Hello.java
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/web/WEB-INF/web.xml
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/web/hello.jsp
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/web/images/tomcat.gif
+apache-tomcat-9.0.87/webapps/docs/appdev/sample/web/index.html
+apache-tomcat-9.0.87/webapps/docs/appdev/source.html
+apache-tomcat-9.0.87/webapps/docs/appdev/web.xml.txt
+apache-tomcat-9.0.87/webapps/docs/apr.html
+apache-tomcat-9.0.87/webapps/docs/architecture/index.html
+apache-tomcat-9.0.87/webapps/docs/architecture/overview.html
+apache-tomcat-9.0.87/webapps/docs/architecture/requestProcess.html
+apache-tomcat-9.0.87/webapps/docs/architecture/requestProcess/authentication-process.png
+apache-tomcat-9.0.87/webapps/docs/architecture/requestProcess/request-process.png
+apache-tomcat-9.0.87/webapps/docs/architecture/startup.html
+apache-tomcat-9.0.87/webapps/docs/architecture/startup/serverStartup.pdf
+apache-tomcat-9.0.87/webapps/docs/architecture/startup/serverStartup.txt
+apache-tomcat-9.0.87/webapps/docs/balancer-howto.html
+apache-tomcat-9.0.87/webapps/docs/building.html
+apache-tomcat-9.0.87/webapps/docs/cdi.html
+apache-tomcat-9.0.87/webapps/docs/cgi-howto.html
+apache-tomcat-9.0.87/webapps/docs/changelog.html
+apache-tomcat-9.0.87/webapps/docs/class-loader-howto.html
+apache-tomcat-9.0.87/webapps/docs/cluster-howto.html
+apache-tomcat-9.0.87/webapps/docs/comments.html
+apache-tomcat-9.0.87/webapps/docs/config/ajp.html
+apache-tomcat-9.0.87/webapps/docs/config/automatic-deployment.html
+apache-tomcat-9.0.87/webapps/docs/config/cluster-channel.html
+apache-tomcat-9.0.87/webapps/docs/config/cluster-deployer.html
+apache-tomcat-9.0.87/webapps/docs/config/cluster-interceptor.html
+apache-tomcat-9.0.87/webapps/docs/config/cluster-listener.html
+apache-tomcat-9.0.87/webapps/docs/config/cluster-manager.html
+apache-tomcat-9.0.87/webapps/docs/config/cluster-membership.html
+apache-tomcat-9.0.87/webapps/docs/config/cluster-receiver.html
+apache-tomcat-9.0.87/webapps/docs/config/cluster-sender.html
+apache-tomcat-9.0.87/webapps/docs/config/cluster-valve.html
+apache-tomcat-9.0.87/webapps/docs/config/cluster.html
+apache-tomcat-9.0.87/webapps/docs/config/context.html
+apache-tomcat-9.0.87/webapps/docs/config/cookie-processor.html
+apache-tomcat-9.0.87/webapps/docs/config/credentialhandler.html
+apache-tomcat-9.0.87/webapps/docs/config/engine.html
+apache-tomcat-9.0.87/webapps/docs/config/executor.html
+apache-tomcat-9.0.87/webapps/docs/config/filter.html
+apache-tomcat-9.0.87/webapps/docs/config/globalresources.html
+apache-tomcat-9.0.87/webapps/docs/config/host.html
+apache-tomcat-9.0.87/webapps/docs/config/http.html
+apache-tomcat-9.0.87/webapps/docs/config/http2.html
+apache-tomcat-9.0.87/webapps/docs/config/index.html
+apache-tomcat-9.0.87/webapps/docs/config/jar-scan-filter.html
+apache-tomcat-9.0.87/webapps/docs/config/jar-scanner.html
+apache-tomcat-9.0.87/webapps/docs/config/jaspic.html
+apache-tomcat-9.0.87/webapps/docs/config/listeners.html
+apache-tomcat-9.0.87/webapps/docs/config/loader.html
+apache-tomcat-9.0.87/webapps/docs/config/manager.html
+apache-tomcat-9.0.87/webapps/docs/config/realm.html
+apache-tomcat-9.0.87/webapps/docs/config/resources.html
+apache-tomcat-9.0.87/webapps/docs/config/server.html
+apache-tomcat-9.0.87/webapps/docs/config/service.html
+apache-tomcat-9.0.87/webapps/docs/config/sessionidgenerator.html
+apache-tomcat-9.0.87/webapps/docs/config/systemprops.html
+apache-tomcat-9.0.87/webapps/docs/config/valve.html
+apache-tomcat-9.0.87/webapps/docs/connectors.html
+apache-tomcat-9.0.87/webapps/docs/default-servlet.html
+apache-tomcat-9.0.87/webapps/docs/deployer-howto.html
+apache-tomcat-9.0.87/webapps/docs/developers.html
+apache-tomcat-9.0.87/webapps/docs/elapi/index.html
+apache-tomcat-9.0.87/webapps/docs/graal.html
+apache-tomcat-9.0.87/webapps/docs/host-manager-howto.html
+apache-tomcat-9.0.87/webapps/docs/html-host-manager-howto.html
+apache-tomcat-9.0.87/webapps/docs/html-manager-howto.html
+apache-tomcat-9.0.87/webapps/docs/images/add.gif
+apache-tomcat-9.0.87/webapps/docs/images/asf-logo.svg
+apache-tomcat-9.0.87/webapps/docs/images/code.gif
+apache-tomcat-9.0.87/webapps/docs/images/cors-flowchart.png
+apache-tomcat-9.0.87/webapps/docs/images/design.gif
+apache-tomcat-9.0.87/webapps/docs/images/docs-stylesheet.css
+apache-tomcat-9.0.87/webapps/docs/images/docs.gif
+apache-tomcat-9.0.87/webapps/docs/images/fix.gif
+apache-tomcat-9.0.87/webapps/docs/images/fonts/OpenSans400.woff
+apache-tomcat-9.0.87/webapps/docs/images/fonts/OpenSans400italic.woff
+apache-tomcat-9.0.87/webapps/docs/images/fonts/OpenSans600.woff
+apache-tomcat-9.0.87/webapps/docs/images/fonts/OpenSans600italic.woff
+apache-tomcat-9.0.87/webapps/docs/images/fonts/OpenSans700.woff
+apache-tomcat-9.0.87/webapps/docs/images/fonts/OpenSans700italic.woff
+apache-tomcat-9.0.87/webapps/docs/images/fonts/fonts.css
+apache-tomcat-9.0.87/webapps/docs/images/tomcat.gif
+apache-tomcat-9.0.87/webapps/docs/images/tomcat.png
+apache-tomcat-9.0.87/webapps/docs/images/update.gif
+apache-tomcat-9.0.87/webapps/docs/images/void.gif
+apache-tomcat-9.0.87/webapps/docs/index.html
+apache-tomcat-9.0.87/webapps/docs/introduction.html
+apache-tomcat-9.0.87/webapps/docs/jasper-howto.html
+apache-tomcat-9.0.87/webapps/docs/jaspicapi/index.html
+apache-tomcat-9.0.87/webapps/docs/jdbc-pool.html
+apache-tomcat-9.0.87/webapps/docs/jndi-datasource-examples-howto.html
+apache-tomcat-9.0.87/webapps/docs/jndi-resources-howto.html
+apache-tomcat-9.0.87/webapps/docs/jspapi/index.html
+apache-tomcat-9.0.87/webapps/docs/logging.html
+apache-tomcat-9.0.87/webapps/docs/manager-howto.html
+apache-tomcat-9.0.87/webapps/docs/maven-jars.html
+apache-tomcat-9.0.87/webapps/docs/mbeans-descriptors-howto.html
+apache-tomcat-9.0.87/webapps/docs/mbeans-descriptors.dtd
+apache-tomcat-9.0.87/webapps/docs/monitoring.html
+apache-tomcat-9.0.87/webapps/docs/proxy-howto.html
+apache-tomcat-9.0.87/webapps/docs/realm-howto.html
+apache-tomcat-9.0.87/webapps/docs/rewrite.html
+apache-tomcat-9.0.87/webapps/docs/security-howto.html
+apache-tomcat-9.0.87/webapps/docs/security-manager-howto.html
+apache-tomcat-9.0.87/webapps/docs/servletapi/index.html
+apache-tomcat-9.0.87/webapps/docs/setup.html
+apache-tomcat-9.0.87/webapps/docs/ssi-howto.html
+apache-tomcat-9.0.87/webapps/docs/ssl-howto.html
+apache-tomcat-9.0.87/webapps/docs/tribes/developers.html
+apache-tomcat-9.0.87/webapps/docs/tribes/faq.html
+apache-tomcat-9.0.87/webapps/docs/tribes/interceptors.html
+apache-tomcat-9.0.87/webapps/docs/tribes/introduction.html
+apache-tomcat-9.0.87/webapps/docs/tribes/membership.html
+apache-tomcat-9.0.87/webapps/docs/tribes/setup.html
+apache-tomcat-9.0.87/webapps/docs/tribes/status.html
+apache-tomcat-9.0.87/webapps/docs/tribes/transport.html
+apache-tomcat-9.0.87/webapps/docs/virtual-hosting-howto.html
+apache-tomcat-9.0.87/webapps/docs/web-socket-howto.html
+apache-tomcat-9.0.87/webapps/docs/websocketapi/index.html
+apache-tomcat-9.0.87/webapps/docs/windows-auth-howto.html
+apache-tomcat-9.0.87/webapps/docs/windows-service-howto.html
+apache-tomcat-9.0.87/webapps/examples/META-INF/context.xml
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/CookieExample.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/CookieExample.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/HelloWorldExample.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/HelloWorldExample.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings_cs.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings_de.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings_es.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings_fr.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings_ja.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings_ko.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings_pt.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings_pt_BR.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings_ru.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/LocalStrings_zh_CN.properties
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/RequestHeaderExample.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/RequestHeaderExample.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/RequestInfoExample.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/RequestInfoExample.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/RequestParamExample.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/RequestParamExample.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/ServletToJsp.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/ServletToJsp.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/SessionExample.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/SessionExample.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async0$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async0.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async0.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async1$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async1.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async2$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async2.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async2.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async3.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Async3.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/AsyncStockContextListener.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/AsyncStockServlet.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Stockticker$Stock.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Stockticker$TickListener.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Stockticker.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/async/Stockticker.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/cal/Entries.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/cal/Entries.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/cal/Entry.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/cal/Entry.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/cal/JspCalendar.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/cal/JspCalendar.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/cal/TableBean.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/cal/TableBean.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/checkbox/CheckTest.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/checkbox/CheckTest.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/colors/ColorGameBean.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/colors/ColorGameBean.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilter.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/compressionFilters/CompressionFilterTestServlet.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/compressionFilters/CompressionResponseStream.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/compressionFilters/CompressionServletResponseWrapper.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/dates/JspCalendar.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/dates/JspCalendar.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/error/Smart.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/error/Smart.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/ExampleTagBase.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/ExampleTagBase.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/FooTag.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/FooTag.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/FooTagExtraInfo.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/LogTag.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/LogTag.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/ValuesTag.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/filters/ExampleFilter.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/http2/SimpleImagePush.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/http2/SimpleImagePush.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/FindBookSimpleTag.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/FindBookSimpleTag.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/HelloWorldSimpleTag.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/HelloWorldSimpleTag.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/RepeatSimpleTag.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/RepeatSimpleTag.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/ShuffleSimpleTag.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/ShuffleSimpleTag.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/TileSimpleTag.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/TileSimpleTag.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/listeners/ContextListener.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/listeners/ContextListener.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/listeners/SessionListener.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/listeners/SessionListener.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter$CounterListener.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/nonblocking/ByteCounter.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter$NumberWriterListener.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/nonblocking/NumberWriter.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/num/NumberGuessBean.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/num/NumberGuessBean.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/sessions/DummyCart.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/sessions/DummyCart.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers$TrailerFieldSupplier.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/trailers/ResponseTrailers.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/util/CookieFilter.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/util/CookieFilter.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/util/HTMLFilter.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/util/HTMLFilter.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/validators/DebugValidator.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/validators/DebugValidator.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/Client$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/Client.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/Client.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage$ParseException.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$2.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$2.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$MessageType.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$Player.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/Room.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/Room.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation$CompletedFuture.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoAsyncAnnotation.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerBinary.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandlerText.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoStreamAnnotation.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/EchoStreamAnnotation.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/echo/servers.json
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/Direction.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/Direction.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/Location$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/Location.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/Location.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/Snake.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/Snake.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/jsp/403.jsp
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/jsp/403.jsp.html
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/jsp/debug-taglib.tld
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/jsp/example-taglib.tld
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/jsp/jsp2-example-taglib.tld
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/tags/displayProducts.tag
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/tags/helloWorld.tag
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/tags/panel.tag
+apache-tomcat-9.0.87/webapps/examples/WEB-INF/web.xml
+apache-tomcat-9.0.87/webapps/examples/index.html
+apache-tomcat-9.0.87/webapps/examples/jsp/async/async1.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/async/async1.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/async/async3.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/async/async3.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/async/index.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/async/index.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/Entries.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/Entry.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/JspCalendar.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/TableBean.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/cal1.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/cal1.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/cal2.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/cal2.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/calendar.html
+apache-tomcat-9.0.87/webapps/examples/jsp/cal/login.html
+apache-tomcat-9.0.87/webapps/examples/jsp/checkbox/CheckTest.html
+apache-tomcat-9.0.87/webapps/examples/jsp/checkbox/check.html
+apache-tomcat-9.0.87/webapps/examples/jsp/checkbox/checkresult.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/checkbox/checkresult.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/checkbox/cresult.html
+apache-tomcat-9.0.87/webapps/examples/jsp/colors/ColorGameBean.html
+apache-tomcat-9.0.87/webapps/examples/jsp/colors/clr.html
+apache-tomcat-9.0.87/webapps/examples/jsp/colors/colors.html
+apache-tomcat-9.0.87/webapps/examples/jsp/colors/colrs.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/colors/colrs.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/dates/date.html
+apache-tomcat-9.0.87/webapps/examples/jsp/dates/date.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/dates/date.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/error/er.html
+apache-tomcat-9.0.87/webapps/examples/jsp/error/err.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/error/err.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/error/error.html
+apache-tomcat-9.0.87/webapps/examples/jsp/error/errorpge.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/error/errorpge.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/forward/forward.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/forward/forward.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/forward/fwd.html
+apache-tomcat-9.0.87/webapps/examples/jsp/forward/one.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/forward/one.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/forward/two.html
+apache-tomcat-9.0.87/webapps/examples/jsp/images/code.gif
+apache-tomcat-9.0.87/webapps/examples/jsp/images/execute.gif
+apache-tomcat-9.0.87/webapps/examples/jsp/images/return.gif
+apache-tomcat-9.0.87/webapps/examples/jsp/include/foo.html
+apache-tomcat-9.0.87/webapps/examples/jsp/include/foo.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/include/foo.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/include/inc.html
+apache-tomcat-9.0.87/webapps/examples/jsp/include/include.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/include/include.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/index.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/Functions.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/ValuesBean.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/ValuesTag.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/basic-arithmetic.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/basic-arithmetic.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/basic-comparisons.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/basic-comparisons.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/basic-comparisons.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/composite.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/composite.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/composite.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/functions.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/functions.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/functions.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/implicit-objects.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/implicit-objects.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/el/implicit-objects.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/FooBean.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/HelloWorldSimpleTag.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/ShuffleSimpleTag.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/TileSimpleTag.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/jspattribute.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/jspattribute.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/jspattribute.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/shuffle.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/shuffle.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspattribute/shuffle.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspx/basic.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspx/basic.jspx
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspx/basic.jspx.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspx/svgexample.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspx/textRotate.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspx/textRotate.jpg
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspx/textRotate.jspx
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/jspx/textRotate.jspx.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/EchoAttributesTag.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/coda.jspf
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/coda.jspf.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/config.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/config.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/config.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/dynamicattrs.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/dynamicattrs.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/dynamicattrs.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/prelude.jspf
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/misc/prelude.jspf.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/BookBean.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/FindBookSimpleTag.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/Functions.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/HelloWorldSimpleTag.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/RepeatSimpleTag.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/book.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/book.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/book.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/hello.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/hello.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/hello.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/repeat.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/repeat.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/simpletag/repeat.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/displayProducts.tag.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/hello.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/hello.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/hello.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/helloWorld.tag.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/panel.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/panel.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/panel.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/panel.tag.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/products.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/products.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsp2/tagfiles/products.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsptoserv/ServletToJsp.java.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsptoserv/hello.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsptoserv/hello.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/jsptoserv/jts.html
+apache-tomcat-9.0.87/webapps/examples/jsp/num/numguess.html
+apache-tomcat-9.0.87/webapps/examples/jsp/num/numguess.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/num/numguess.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/security/protected/error.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/security/protected/error.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/security/protected/index.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/security/protected/index.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/security/protected/login.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/security/protected/login.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/sessions/DummyCart.html
+apache-tomcat-9.0.87/webapps/examples/jsp/sessions/carts.html
+apache-tomcat-9.0.87/webapps/examples/jsp/sessions/carts.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/sessions/carts.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/sessions/crt.html
+apache-tomcat-9.0.87/webapps/examples/jsp/simpletag/foo.html
+apache-tomcat-9.0.87/webapps/examples/jsp/simpletag/foo.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/simpletag/foo.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/snp/snoop.html
+apache-tomcat-9.0.87/webapps/examples/jsp/snp/snoop.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/snp/snoop.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/choose.html
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/choose.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/choose.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/foreach.html
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/foreach.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/foreach.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/howto.html
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/if.html
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/if.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/if.jsp.html
+apache-tomcat-9.0.87/webapps/examples/jsp/tagplugin/notes.html
+apache-tomcat-9.0.87/webapps/examples/jsp/xml/xml.html
+apache-tomcat-9.0.87/webapps/examples/jsp/xml/xml.jsp
+apache-tomcat-9.0.87/webapps/examples/jsp/xml/xml.jsp.html
+apache-tomcat-9.0.87/webapps/examples/servlets/cookies.html
+apache-tomcat-9.0.87/webapps/examples/servlets/helloworld.html
+apache-tomcat-9.0.87/webapps/examples/servlets/images/code.gif
+apache-tomcat-9.0.87/webapps/examples/servlets/images/execute.gif
+apache-tomcat-9.0.87/webapps/examples/servlets/images/return.gif
+apache-tomcat-9.0.87/webapps/examples/servlets/index.html
+apache-tomcat-9.0.87/webapps/examples/servlets/nonblocking/bytecounter.html
+apache-tomcat-9.0.87/webapps/examples/servlets/reqheaders.html
+apache-tomcat-9.0.87/webapps/examples/servlets/reqinfo.html
+apache-tomcat-9.0.87/webapps/examples/servlets/reqparams.html
+apache-tomcat-9.0.87/webapps/examples/servlets/sessions.html
+apache-tomcat-9.0.87/webapps/examples/websocket/chat.xhtml
+apache-tomcat-9.0.87/webapps/examples/websocket/drawboard.xhtml
+apache-tomcat-9.0.87/webapps/examples/websocket/echo.xhtml
+apache-tomcat-9.0.87/webapps/examples/websocket/index.xhtml
+apache-tomcat-9.0.87/webapps/examples/websocket/snake.xhtml
+apache-tomcat-9.0.87/webapps/host-manager/META-INF/context.xml
+apache-tomcat-9.0.87/webapps/host-manager/WEB-INF/jsp/401.jsp
+apache-tomcat-9.0.87/webapps/host-manager/WEB-INF/jsp/403.jsp
+apache-tomcat-9.0.87/webapps/host-manager/WEB-INF/jsp/404.jsp
+apache-tomcat-9.0.87/webapps/host-manager/WEB-INF/manager.xml
+apache-tomcat-9.0.87/webapps/host-manager/WEB-INF/web.xml
+apache-tomcat-9.0.87/webapps/host-manager/css/manager.css
+apache-tomcat-9.0.87/webapps/host-manager/images/asf-logo.svg
+apache-tomcat-9.0.87/webapps/host-manager/images/tomcat.svg
+apache-tomcat-9.0.87/webapps/host-manager/index.jsp
+apache-tomcat-9.0.87/webapps/manager/META-INF/context.xml
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/jsp/401.jsp
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/jsp/403.jsp
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/jsp/404.jsp
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/jsp/connectorCerts.jsp
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/jsp/connectorCiphers.jsp
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/jsp/connectorTrustedCerts.jsp
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/jsp/sessionsList.jsp
+apache-tomcat-9.0.87/webapps/manager/WEB-INF/web.xml
+apache-tomcat-9.0.87/webapps/manager/css/manager.css
+apache-tomcat-9.0.87/webapps/manager/images/asf-logo.svg
+apache-tomcat-9.0.87/webapps/manager/images/tomcat.svg
+apache-tomcat-9.0.87/webapps/manager/index.jsp
+apache-tomcat-9.0.87/webapps/manager/status.xsd
+apache-tomcat-9.0.87/webapps/manager/xform.xsl
+apache-tomcat-9.0.87/bin/catalina.sh
+apache-tomcat-9.0.87/bin/ciphers.sh
+apache-tomcat-9.0.87/bin/configtest.sh
+apache-tomcat-9.0.87/bin/daemon.sh
+apache-tomcat-9.0.87/bin/digest.sh
+apache-tomcat-9.0.87/bin/makebase.sh
+apache-tomcat-9.0.87/bin/setclasspath.sh
+apache-tomcat-9.0.87/bin/shutdown.sh
+apache-tomcat-9.0.87/bin/startup.sh
+apache-tomcat-9.0.87/bin/tool-wrapper.sh
+apache-tomcat-9.0.87/bin/version.sh
+[root@ip-172-31-2-110 opt]# ls
+apache-tomcat-9.0.87  apache-tomcat-9.0.87.tar.gz  aws  rh
+[root@ip-172-31-2-110 opt]# mv apache-tomcat-9.0.87 tomcat
+[root@ip-172-31-2-110 opt]# ls
+apache-tomcat-9.0.87.tar.gz  aws  rh  tomcat
+[root@ip-172-31-2-110 opt]# cd tomcat
+[root@ip-172-31-2-110 tomcat]# ls
+bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work
+[root@ip-172-31-2-110 tomcat]# cd bin
+[root@ip-172-31-2-110 bin]# ls
+bootstrap.jar  catalina-tasks.xml  commons-daemon.jar            configtest.sh  digest.sh     setclasspath.bat  shutdown.sh  tomcat-juli.jar       tool-wrapper.sh
+catalina.bat   ciphers.bat         commons-daemon-native.tar.gz  daemon.sh      makebase.bat  setclasspath.sh   startup.bat  tomcat-native.tar.gz  version.bat
+catalina.sh    ciphers.sh          configtest.bat                digest.bat     makebase.sh   shutdown.bat      startup.sh   tool-wrapper.bat      version.sh
+[root@ip-172-31-2-110 bin]# ./startup.sh
+Using CATALINA_BASE:   /opt/tomcat
+Using CATALINA_HOME:   /opt/tomcat
+Using CATALINA_TMPDIR: /opt/tomcat/temp
+Using JRE_HOME:        /
+Using CLASSPATH:       /opt/tomcat/bin/bootstrap.jar:/opt/tomcat/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[root@ip-172-31-2-110 bin]# cd ..
+[root@ip-172-31-2-110 tomcat]# ls
+bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work
+[root@ip-172-31-2-110 tomcat]# find / -name context.xml
+/opt/tomcat/conf/context.xml
+/opt/tomcat/webapps/docs/META-INF/context.xml
+/opt/tomcat/webapps/examples/META-INF/context.xml
+/opt/tomcat/webapps/host-manager/META-INF/context.xml
+/opt/tomcat/webapps/manager/META-INF/context.xml
+[root@ip-172-31-2-110 tomcat]# vim /opt/tomcat/webapps/host-manager/META-INF/context.xml
+[root@ip-172-31-2-110 tomcat]# vim /opt/tomcat/webapps/manager/META-INF/context.xml
+[root@ip-172-31-2-110 tomcat]# cd bin
+[root@ip-172-31-2-110 bin]# ls
+bootstrap.jar  catalina-tasks.xml  commons-daemon.jar            configtest.sh  digest.sh     setclasspath.bat  shutdown.sh  tomcat-juli.jar       tool-wrapper.sh
+catalina.bat   ciphers.bat         commons-daemon-native.tar.gz  daemon.sh      makebase.bat  setclasspath.sh   startup.bat  tomcat-native.tar.gz  version.bat
+catalina.sh    ciphers.sh          configtest.bat                digest.bat     makebase.sh   shutdown.bat      startup.sh   tool-wrapper.bat      version.sh
+[root@ip-172-31-2-110 bin]# ./shutdown.sh
+Using CATALINA_BASE:   /opt/tomcat
+Using CATALINA_HOME:   /opt/tomcat
+Using CATALINA_TMPDIR: /opt/tomcat/temp
+Using JRE_HOME:        /
+Using CLASSPATH:       /opt/tomcat/bin/bootstrap.jar:/opt/tomcat/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+[root@ip-172-31-2-110 bin]# ./startup.sh
+Using CATALINA_BASE:   /opt/tomcat
+Using CATALINA_HOME:   /opt/tomcat
+Using CATALINA_TMPDIR: /opt/tomcat/temp
+Using JRE_HOME:        /
+Using CLASSPATH:       /opt/tomcat/bin/bootstrap.jar:/opt/tomcat/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[root@ip-172-31-2-110 bin]# cd ..
+[root@ip-172-31-2-110 tomcat]# ls
+bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work
+[root@ip-172-31-2-110 tomcat]# cd conf
+[root@ip-172-31-2-110 conf]# ls
+Catalina         catalina.properties  jaspic-providers.xml  logging.properties  tomcat-users.xml  web.xml
+catalina.policy  context.xml          jaspic-providers.xsd  server.xml          tomcat-users.xsd
+[root@ip-172-31-2-110 conf]# vim tomcat-users.xml
+[root@ip-172-31-2-110 conf]# cd ..
+[root@ip-172-31-2-110 tomcat]# ls
+bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work
+[root@ip-172-31-2-110 tomcat]# cd bin
+[root@ip-172-31-2-110 bin]# ls
+bootstrap.jar  catalina-tasks.xml  commons-daemon.jar            configtest.sh  digest.sh     setclasspath.bat  shutdown.sh  tomcat-juli.jar       tool-wrapper.sh
+catalina.bat   ciphers.bat         commons-daemon-native.tar.gz  daemon.sh      makebase.bat  setclasspath.sh   startup.bat  tomcat-native.tar.gz  version.bat
+catalina.sh    ciphers.sh          configtest.bat                digest.bat     makebase.sh   shutdown.bat      startup.sh   tool-wrapper.bat      version.sh
+[root@ip-172-31-2-110 bin]# ./shutdown.sh
+Using CATALINA_BASE:   /opt/tomcat
+Using CATALINA_HOME:   /opt/tomcat
+Using CATALINA_TMPDIR: /opt/tomcat/temp
+Using JRE_HOME:        /
+Using CLASSPATH:       /opt/tomcat/bin/bootstrap.jar:/opt/tomcat/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+NOTE: Picked up JDK_JAVA_OPTIONS:  --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+[root@ip-172-31-2-110 bin]# ./startup.sh
+Using CATALINA_BASE:   /opt/tomcat
+Using CATALINA_HOME:   /opt/tomcat
+Using CATALINA_TMPDIR: /opt/tomcat/temp
+Using JRE_HOME:        /
+Using CLASSPATH:       /opt/tomcat/bin/bootstrap.jar:/opt/tomcat/bin/tomcat-juli.jar
+Using CATALINA_OPTS:
+Tomcat started.
+[root@ip-172-31-2-110 bin]#
